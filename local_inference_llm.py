@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This script performs local inference using the Llama3.2 1B model via the Hugging Face API.
+This script performs local inference using the small-scale language model via the Hugging Face API (e.g., meta-llama/Llama-3.2-1B or deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B).
 It now supports device selection: auto, cuda, mps (Apple Silicon), or cpu.
 
 Usage:
