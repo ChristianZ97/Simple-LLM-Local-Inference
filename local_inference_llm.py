@@ -93,8 +93,8 @@ def generate_text(tokenizer, model, prompt: str, max_length: int, device: torch.
     return generated_text
 
 def main():
-    parser = argparse.ArgumentParser(description="Local inference for Llama3.2 1B model with device selection")
-    parser.add_argument("--model", type=str, default="meta-llama/Llama-3.2-1B",
+    parser = argparse.ArgumentParser(description="Local inference for language model with device selection")
+    parser.add_argument("--model", type=str, default="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
                         help="Hugging Face model name or path")
     parser.add_argument("--prompt", type=str, default="This is a simple local LLM inference test. Wait!",
                         help="Prompt text for generation")
