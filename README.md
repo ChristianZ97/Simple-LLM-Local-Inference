@@ -40,10 +40,6 @@ sudo dpkg -i cuda-repo-wsl-ubuntu-12-8-local_12.8.0-1_amd64.deb
 sudo cp /var/cuda-repo-wsl-ubuntu-12-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
-```
-
-Re-check `nvcc --version`. If still missing, you can alternatively run:
-```bash
 sudo apt install nvidia-cuda-toolkit
 ```
 
@@ -62,6 +58,12 @@ python3 -m venv local_llm_test
 source local_llm_test/bin/activate
 ```
 
+## 5. Clone the Project
+```bash
+git clone https://github.com/ChristianZ97/Simple-LLM-Local-Inference
+cd Simple-LLM-Local-Inference/
+```
+
 Install required Python packages:
 ```bash
 pip install -r requirements.txt
@@ -72,15 +74,13 @@ Test the installation:
 python3 -c "import torch; print(torch.__version__)"
 ```
 
-## 5. Log in to Hugging Face
+## 6. Log in to Hugging Face
 ```bash
 huggingface-cli login
 ```
 
-## 6. Clone and Run the Project
+## 7. Run the Project
 ```bash
-git clone https://github.com/ChristianZ97/Simple-LLM-Local-Inference
-cd Simple-LLM-Local-Inference/
 python3 local_inference_llama.py
 ```
 
