@@ -8,18 +8,12 @@ wsl --unregister Ubuntu
 wsl --list --verbose
 ```
 
-## 2. Install Git and Python
-Check Git:
+## 2. Check the Installation of Git and Python
 ```bash
 git --version
-# If not installed:
-sudo apt install git
-```
-
-Check Python:
-```bash
 python3 --version
 # If not installed:
+sudo apt install git
 sudo apt install python3
 ```
 
@@ -30,7 +24,7 @@ nvidia-smi
 nvcc --version
 ```
 
-If `nvcc` is not installed, run:
+If `nvcc` is not installed, run (please follow the official guide https://docs.nvidia.com/cuda/wsl-user-guide/index.html):
 ```bash
 sudo apt-key del 7fa2af80
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
@@ -67,11 +61,6 @@ cd Simple-LLM-Local-Inference/
 Install required Python packages:
 ```bash
 pip install -r requirements.txt
-```
-
-Test the installation:
-```bash
-python3 -c "import torch; print(torch.__version__)"
 ```
 
 ## 6. Log in to Hugging Face
