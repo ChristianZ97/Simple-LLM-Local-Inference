@@ -8,7 +8,8 @@ Usage:
     python3 local_inference_llama.py --model <model-name> --prompt "Your prompt here" [--max_length 100] [--device auto]
 
 Example:
-    python3 local_inference_llama.py --model meta-llama/Llama-3.2-1B --prompt "Introduce Taiwanese cuisine" --max_length 150 --device auto
+    python3 local_inference_llama.py --model meta-llama/Llama-3.2-1B --prompt "Introduce Taiwanese cuisine" --max_length 1500 --device auto
+    python3 local_inference_llama.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --prompt "Introduce Taiwanese cuisine" --max_length 1500 --device auto
 """
 
 import os
@@ -95,7 +96,7 @@ def main():
     parser = argparse.ArgumentParser(description="Local inference for Llama3.2 1B model with device selection")
     parser.add_argument("--model", type=str, default="meta-llama/Llama-3.2-1B",
                         help="Hugging Face model name or path")
-    parser.add_argument("--prompt", type=str, default="This is a simple local LLM inference test with Llama-3.2-1B model,",
+    parser.add_argument("--prompt", type=str, default="This is a simple local LLM inference test. Wait!",
                         help="Prompt text for generation")
     parser.add_argument("--max_length", type=int, default=100,
                         help="Maximum length for the generated text")
