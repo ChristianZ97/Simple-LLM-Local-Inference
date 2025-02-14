@@ -5,7 +5,8 @@
 - **Reset and Check WSL, Git and Python**
   ```bash
   wsl --unregister Ubuntu
-  wsl --list --verbose
+  wsl --list --oneline
+  wsl --install -d Ubuntu
 
   git --version
   python3 --version
