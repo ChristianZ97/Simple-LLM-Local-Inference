@@ -1,6 +1,6 @@
 # Simple LLM Local Inference
 
-## Setup on WSL
+## Setup on WSL (Ubuntu)
 
 - **Reset and Check WSL, Git and Python**
   ```bash
