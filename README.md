@@ -38,17 +38,19 @@
   ```
 
 - **Set Up Python Virtual Environment**
-  ```bash
-  pip --version
-  # If not installed:
-  sudo apt install python3-pip
-  ```
 
-- Install the venv module and create a virtual environment:
+- Install the venv module and create a virtual environment
   ```bash
   sudo apt install python3.12-venv
   python3 -m venv local_llm_test
   source local_llm_test/bin/activate
+  ```
+  
+- Install pip if needed
+  ```bash
+  pip --version
+  # If not installed:
+  sudo apt install python3-pip
   ```
 
 - **Run the Project**
