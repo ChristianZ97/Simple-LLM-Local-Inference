@@ -66,6 +66,28 @@
   python3 local_inference_llama.py
   ```
 
+## Setup Docker for Testing Inference on NVIDIA Edge Device
+
+- **Download Docker Desktop**  
+  Visit [Docker Desktop](https://www.docker.com/) and download the installer.
+  ```bash
+  docker --version
+  ```
+
+- **Running NVIDIA L4T JetPack Containers**
+  ```bash
+  # Copy the project's script to the docker workspace
+  docker run --rm -it -v /path/to/Simple-LLM-Local-Inference:/workspace nvcr.io/nvidia/l4t-jetpack:r36.4.0 /bin/bash
+  ```
+
+- **Run the project**
+  ```bash
+  cd /workspace
+  pip install -r requirements.txt
+  python3 local_inference_llama.py
+  ```
+
+---
 
 ## License
 This project is licensed under the MIT License.
