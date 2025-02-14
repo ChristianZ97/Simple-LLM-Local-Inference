@@ -24,7 +24,7 @@ nvidia-smi
 nvcc --version
 ```
 
-If `nvcc` is not installed, run (please follow the official guide https://docs.nvidia.com/cuda/wsl-user-guide/index.html):
+If `nvcc` is not installed, run (please follow the [official guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)):
 ```bash
 sudo apt-key del 7fa2af80
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
