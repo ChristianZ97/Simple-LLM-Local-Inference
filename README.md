@@ -77,7 +77,7 @@
   docker --version
   ```
 
-- **Running NVIDIA L4T JetPack Containers**
+- **Running [NVIDIA L4T JetPack Containers](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-jetpack)**
   ```bash
   # Copy the project's script to the docker workspace
   docker run --rm -it -v /path/to/Simple-LLM-Local-Inference:/workspace nvcr.io/nvidia/l4t-jetpack:r36.4.0 /bin/bash
