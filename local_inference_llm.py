@@ -14,7 +14,7 @@ Example:
     python3 local_inference_llm.py --model meta-llama/Llama-3.2-1B --prompt "How many r's in Strawberry?" --max_length 5000 --quantization int4
     python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --prompt "How many r's in Strawberry?" --max_length 5000 --quantization fp32
 
-    python3 local_inference_llm.py --model meta-llama/Llama-3.2-3B --prompt "How many r's in Strrawberrier?" --max_length 5000 --quantization fp32
+    python3 local_inference_llm.py --model meta-llama/Llama-3.2-3B --prompt "Think step-by-step. How many r's in Strrawberrier?" --max_length 5000 --quantization fp32
 """
 
 import os
