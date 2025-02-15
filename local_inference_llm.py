@@ -14,6 +14,7 @@ Example:
     python3 local_inference_llm.py --model meta-llama/Llama-3.2-1B --prompt "How many r's in Strawberry?" --max_length 5000 --quantization int4
     python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --prompt "How many r's in Strawberry?" --max_length 500 --quantization fp32
     python3 local_inference_llm.py --model simplescaling/s1-32B --prompt "Think step-by-step. How many r's in Strawberry?" --max_length 5000 --quantization fp32
+    python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-14B --prompt "Think step-by-step. How many r's in Strrawrberries?" --max_length 5000 --quantization fp32
 """
 
 import os
@@ -78,7 +79,7 @@ def generate_text(tokenizer, model, prompt: str, max_length: int, device: torch.
             pad_token_id=tokenizer.eos_token_id  # Avoid warnings
         )
 
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return tokenizer.decode(outputs[0], skip_special_tokens=False)
 
 def main():
     parser = argparse.ArgumentParser(description="Optimized Local LLM Inference with Quantization Options")
