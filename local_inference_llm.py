@@ -12,9 +12,10 @@ Usage:
     python3 local_inference_llm.py --model <model-name> --prompt "Your prompt here" [--max_length 100] [--quantization fp16]
 Example:
     python3 local_inference_llm.py --model meta-llama/Llama-3.2-1B --prompt "How many r's in Strawberry?" --max_length 5000 --quantization int4
-    python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --prompt "How many r's in Strawberry?" --max_length 500 --quantization fp32
-    python3 local_inference_llm.py --model simplescaling/s1-32B --prompt "Think step-by-step. How many r's in Strawberry?" --max_length 5000 --quantization fp32
-    python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-14B --prompt "Think step-by-step. How many r's in Strrawrberries?" --max_length 5000 --quantization fp32
+    python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --prompt "How many r's in Strawberry?" --max_length 5000 --quantization fp32
+
+    python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --prompt "Think step-by-step. How many r's in Strrawrberries?" --max_length 500 --quantization int4
+    python3 local_inference_llm.py --model mistralai/Mistral-7B-v0.1 --prompt "Think step-by-step. How many r's in Strrawrberries?" --max_length 500 --quantization int4
 """
 
 import os
