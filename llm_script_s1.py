@@ -3,13 +3,14 @@ import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-
+"""
 if torch.cuda.is_available():
     DEVICE = "cuda"
 elif torch.backends.mps.is_available():
     DEVICE = "mps"
 else:
-    DEVICE = "cpu"
+"""
+DEVICE = "cpu"
 
 
 # model_name = "simplescaling/s1.1-32B"
