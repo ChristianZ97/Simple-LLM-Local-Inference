@@ -23,7 +23,7 @@ os.makedirs(cache_dir, exist_ok=True)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype="auto",
-    device_map="auto",
+    device_map="cpu",
     cache_dir=cache_dir
 )
 tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
