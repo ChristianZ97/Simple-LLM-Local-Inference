@@ -98,6 +98,8 @@ def main():
     args = parser.parse_args()
     device = get_device()
 
+    torch.cuda.empty_cache()
+    
     print(f"Using device: {device}")
     tokenizer, model = load_model(args.model, device, quantization=args.quantization)
 
