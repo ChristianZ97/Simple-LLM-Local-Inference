@@ -33,6 +33,7 @@ messages = [
     {"role": "system", "content": "You are a helpful and harmless assistant. You are Qwen developed by Alibaba. You should think step-by-step."},
     {"role": "user", "content": prompt}
 ]
+
 text = tokenizer.apply_chat_template(
     messages,
     tokenize=False,

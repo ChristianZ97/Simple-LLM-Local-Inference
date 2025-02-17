@@ -15,6 +15,8 @@ Example:
     python3 local_inference_llm.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --prompt "Let's think step-by-step. How many r's in Strrawbery? There are" --max_length 1000 --quantization fp16
 
     python3 local_inference_llm.py --model meta-llama/Llama-3.2-3B --prompt "Think step-by-step. How many r's in Strrawberrier?" --max_length 5000 --quantization fp32
+
+    "You are a helpful and harmless assistant. You are Qwen developed by Alibaba. You should think step-by-step. How many r in raspberry"
 """
 
 import os
@@ -22,8 +24,8 @@ import argparse
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
-os.environ['CUDA_LAUNCH_BLOCKING']="1"
-os.environ['TORCH_USE_CUDA_DSA'] = "1"
+# os.environ['CUDA_LAUNCH_BLOCKING']="1"
+# os.environ['TORCH_USE_CUDA_DSA'] = "1"
 
 def get_device() -> torch.device:
     """Selects the best available device based on user preference."""
@@ -65,7 +67,7 @@ def load_model(model_name: str, device: torch.device, quantization: str):
         torch_dtype=torch_dtype,
         quantization_config=quant_config,
         low_cpu_mem_usage=True,
-        device_map="auto",  # Automatically assign device
+        device_map="cpu",  # Automatically assign device
         cache_dir=cache_dir
     )
 
@@ -88,7 +90,7 @@ def main():
     parser = argparse.ArgumentParser(description="Optimized Local LLM Inference with Quantization Options")
     parser.add_argument("--model", type=str, default="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
                         help="Hugging Face model name or path")
-    parser.add_argument("--prompt", type=str, default="Let's think step-by-step. How many r's in Strrawbery? There are",
+    parser.add_argument("--prompt", type=str, default="You are a helpful and harmless assistant. You are Qwen developed by Alibaba. You should think step-by-step. How many r in raspberry",
                         help="Prompt text for generation")
     parser.add_argument("--max_length", type=int, default=1000,
                         help="Maximum tokens for the generated text")
@@ -96,9 +98,11 @@ def main():
                         help="Quantization method: int4, int8, fp16 (default), or fp32")
 
     args = parser.parse_args()
-    device = get_device()
 
-    torch.cuda.empty_cache()
+    # device = get_device()
+    device = torch.device("cpu")
+
+    # torch.cuda.empty_cache()
     
     print(f"Using device: {device}")
     tokenizer, model = load_model(args.model, device, quantization=args.quantization)
