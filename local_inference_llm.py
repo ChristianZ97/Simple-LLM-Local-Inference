@@ -88,9 +88,9 @@ def main():
     parser = argparse.ArgumentParser(description="Optimized Local LLM Inference with Quantization Options")
     parser.add_argument("--model", type=str, default="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
                         help="Hugging Face model name or path")
-    parser.add_argument("--prompt", type=str, default="This is a simple local LLM inference test. Wait!",
+    parser.add_argument("--prompt", type=str, default="Let's think step-by-step. How many r's in Strrawbery? There are",
                         help="Prompt text for generation")
-    parser.add_argument("--max_length", type=int, default=100,
+    parser.add_argument("--max_length", type=int, default=1000,
                         help="Maximum tokens for the generated text")
     parser.add_argument("--quantization", type=str, default="fp16", choices=["int4", "int8", "fp16", "fp32"],
                         help="Quantization method: int4, int8, fp16 (default), or fp32")
