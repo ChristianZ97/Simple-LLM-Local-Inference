@@ -22,6 +22,9 @@ import argparse
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
+os.environ['CUDA_LAUNCH_BLOCKING']="1"
+os.environ['TORCH_USE_CUDA_DSA'] = "1"
+
 def get_device() -> torch.device:
     """Selects the best available device based on user preference."""
     if torch.cuda.is_available():
